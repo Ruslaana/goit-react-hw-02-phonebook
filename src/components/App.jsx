@@ -32,6 +32,8 @@ export default class App extends Component {
   };
 
   deleteContact = userId => {
+    console.log('userId', userId);
+
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== userId),
     }));
@@ -53,6 +55,7 @@ export default class App extends Component {
       <>
         <Section title="Phonebook">
           <ContactForm addContact={this.addContact} />
+          {/* onClick={() => setClicked(!clicked)}>Click me</button> */}
         </Section>
         <Section title="Contacts">
           <FilterInput
